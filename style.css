@@ -1,0 +1,212 @@
+/* Font */
+:root {
+  font-family: Inter, sans-serif;
+  font-feature-settings: 'liga' 1, 'calt' 1;
+  /* fix for Chrome */
+}
+
+@supports (font-variation-settings: normal) {
+  :root {
+    font-family: InterVariable, sans-serif;
+  }
+}
+
+/* General Styles */
+body {
+  font-family: sans-serif;
+  /* Choose a readable sans-serif font */
+    margin: 0;
+    line-height: 1.6;
+    background-color: #f6f4f1;
+    color: #333;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 20px 0;
+  /* Reduced padding */
+  border-bottom: 1px solid #ddd;
+}
+
+.header-content {
+  /* Add Flexbox for name and nav */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  /* Add some space between name/nav and the hero section */
+}
+
+.name {
+  /* Style Name */
+  font-size: 0.9em;
+  /* Matching size with nav links */
+  font-weight: normal;
+  /* Matching font weight with nav links */
+  color: #777;
+  /* Dark gray - Matching color with nav links */
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  /* Use flexbox for horizontal navigation */
+}
+
+nav li {
+  margin-left: 20px;
+  /* Space between nav items */
+}
+
+nav a {
+  text-decoration: none;
+  color: #777;
+  /* Dark gray */
+  font-weight: normal;
+  /* Less bold */
+  font-size: 0.9em;
+  /* Smaller size */
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Hero Section */
+#hero {
+  text-align: center;
+  padding: 40px 0;
+}
+
+#hero h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+#hero p {
+  font-size: 1.2em;
+  color: #777;
+}
+
+/* Work Section */
+#work {
+  padding: 40px 0;
+}
+
+.project-link {
+  text-decoration: none;
+  /* Remove underline from the link */
+  color: inherit;
+  /* Inherit text color from parent */
+  display: block;
+  /* Make the link a block element */
+  margin-bottom: 30px;
+}
+
+.project {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0;
+  /* Remove margin from project */
+  padding: 15px;
+  /* Add padding to project */
+  border-radius: 5px;
+  /* Add border radius to project */
+  transition: box-shadow 0.3s ease;
+  /* Add transition for smooth hover effect */
+  gap: 20px;
+  /* Add some gap between image and text */
+  position: relative;
+  /* Make the project container relative */
+}
+
+.project:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  /* Add a subtle box shadow on hover */
+}
+
+.project-image {
+  /* Updated mouse cursor on hover */
+  width: 150px;
+  /* Increased size */
+  height: 150px;
+  /* Increased size */
+  object-fit: cover;
+  /* prevent image distortion */
+  border-radius: 5px;
+  cursor: pointer;
+  /* The cursor is now a pointer/hand */
+}
+
+.project h3 {
+  font-size: 1.5em;
+  margin-bottom: 5px;
+}
+
+.project span {
+  color: #007bff;
+  /* Accent color */
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.project-info {
+  flex: 1;
+  /* Take up remaining space */
+}
+
+#mouse-follow-image {
+  pointer-events: none;
+  /* allows the mouse to interact with elements behind it */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  display: none;
+  /* Hidden by default */
+}
+
+#mouse-follow-image img {
+  display: block;
+  max-width: 600px;
+  /* Increased size */
+  max-height: 600px;
+  /* Increased size */
+  width: auto;
+  height: auto;
+  border-radius: 5px;
+}
+
+/* Contact Section */
+#contact {
+  padding: 40px 0;
+  border-top: 1px solid #eee;
+  text-align: center;
+}
+
+#contact a {
+  color: #007bff;
+  /* Accent color */
+  text-decoration: none;
+}
+
+#contact a:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px 0;
+  font-size: 0.8em;
+  color: #777;
+}
