@@ -2,7 +2,6 @@
 :root {
   font-family: Inter, sans-serif;
   font-feature-settings: 'liga' 1, 'calt' 1;
-  /* fix for Chrome */
 }
 
 @supports (font-variation-settings: normal) {
@@ -14,7 +13,6 @@
 /* General Styles */
 body {
   font-family: sans-serif;
-  /* Choose a readable sans-serif font */
   margin: 0;
   line-height: 1.6;
   background-color: #f6f4f1;
@@ -31,27 +29,20 @@ body {
 header {
   text-align: center;
   padding: 20px 0;
-  /* Reduced padding */
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #ccc;
 }
 
 .header-content {
-  /* Add Flexbox for name and nav */
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
-  /* Add some space between name/nav and the hero section */
 }
 
 .name {
-  /* Style Name */
   font-size: 0.9em;
-  /* Matching size with nav links */
   font-weight: normal;
-  /* Matching font weight with nav links */
   color: #777;
-  /* Dark gray - Matching color with nav links */
 }
 
 nav ul {
@@ -59,22 +50,17 @@ nav ul {
   padding: 0;
   margin: 0;
   display: flex;
-  /* Use flexbox for horizontal navigation */
 }
 
 nav li {
   margin-left: 20px;
-  /* Space between nav items */
 }
 
 nav a {
   text-decoration: none;
   color: #777;
-  /* Dark gray */
   font-weight: normal;
-  /* Less bold */
   font-size: 0.9em;
-  /* Smaller size */
 }
 
 nav a:hover {
@@ -85,6 +71,7 @@ nav a:hover {
 #hero {
   text-align: center;
   padding: 40px 0;
+  border-bottom: 1px solid #ccc;
 }
 
 #hero h1 {
@@ -97,17 +84,32 @@ nav a:hover {
   color: #777;
 }
 
+/* style of the hero section */
+.hero-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.profile-picture {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%; /* Circular shape */
+  object-fit: cover; /* Prevents image distortion */
+  border: 3px solid #333;
+  animation: wiggle 1s linear infinite alternate;
+}
+
 /* Work Section */
 #work {
   padding: 40px 0;
 }
 
 .project {
-  /* Adjust the project styles to use space between and change direction to row */
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  /* stretch items to fill width */
   margin-bottom: 30px;
   padding: 15px;
   border-radius: 5px;
@@ -116,18 +118,15 @@ nav a:hover {
 }
 
 .project:hover {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.4);
 }
 
 .project-image {
-  /* Style the image to take full width */
   width: 100%;
   height: auto;
   object-fit: cover;
   border-radius: 5px;
   margin-bottom: 10px;
-  /* Add some spacing */
-  cursor: pointer;
 }
 
 .project h3 {
@@ -136,42 +135,36 @@ nav a:hover {
 }
 
 .project-content {
-  /* add display flex to better control the structure */
   display: flex;
   height: 100%;
 }
 
 .project-info {
   flex: 1;
-  /* Take up remaining space */
 }
 
 .button-container button {
-    /* Modern Button Styles */
-    background-color: #fff; /* White background */
-    color: #333; /* Dark text */
-    border: 2px solid #333; /* Subtle border */
-    padding: 12px 20px; /* Increased padding */
-    border-radius: 8px; /* More rounded corners */
-  cursor: pointer;
+    background-color: #f6f4f1;
+    color: #333;
+    border: 2px solid #333;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
     margin: 5px;
-    font-size: 0.9em; /* Slightly smaller font size */
-    font-weight: 500; /* Semi-bold font weight */
-    letter-spacing: 0.5px; /* Subtle letter spacing */
-    text-transform: uppercase; /* All caps */
-    transition: all 0.3s ease; /* Smooth transition for all properties */
+    font-size: 0.9em;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
 }
 
-/* Remove hover from CSS, the hover is now managed by the JS */
 /*Button container style*/
 .button-container {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  /* Distribute buttons evenly */
   align-items: center;
   width: auto;
-  /* changed width to auto */
   min-height: 100%;
   margin-left: 10px;
 }
@@ -187,27 +180,15 @@ nav a:hover {
   }
 }
 
-/* Remove the project link */
-.project-link {
-  text-decoration: none;
-  /* Remove underline from the link */
-  color: inherit;
-  /* Inherit text color from parent */
-  display: unset;
-  /* Make the link a block element */
-  margin-bottom: 0px;
-}
-
 /* Contact Section */
 #contact {
   padding: 40px 0;
-  border-top: 1px solid #eee;
+  border-top: 1px solid #ccc;
   text-align: center;
 }
 
 #contact a {
   color: #007bff;
-  /* Accent color */
   text-decoration: none;
 }
 
