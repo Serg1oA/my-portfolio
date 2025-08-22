@@ -15,22 +15,22 @@
 body {
   font-family: sans-serif;
   /* Choose a readable sans-serif font */
-    margin: 0;
-    line-height: 1.6;
-    background-color: #f6f4f1;
-    color: #333;
+  margin: 0;
+  line-height: 1.6;
+  background-color: #f6f4f1;
+  color: #333;
 }
 
 .container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
 /* Header */
 header {
-    text-align: center;
-    padding: 20px 0;
+  text-align: center;
+  padding: 20px 0;
   /* Reduced padding */
   border-bottom: 1px solid #ddd;
 }
@@ -102,49 +102,32 @@ nav a:hover {
   padding: 40px 0;
 }
 
-.project-link {
-  text-decoration: none;
-  /* Remove underline from the link */
-  color: inherit;
-  /* Inherit text color from parent */
-  display: block;
-  /* Make the link a block element */
-  margin-bottom: 30px;
-}
-
 .project {
+  /* Adjust the project styles to use space between and change direction to row */
   display: flex;
-  align-items: center;
-  margin-bottom: 0;
-  /* Remove margin from project */
+  flex-direction: column;
+  align-items: stretch;
+  /* stretch items to fill width */
+  margin-bottom: 30px;
   padding: 15px;
-  /* Add padding to project */
   border-radius: 5px;
-  /* Add border radius to project */
   transition: box-shadow 0.3s ease;
-  /* Add transition for smooth hover effect */
-  gap: 20px;
-  /* Add some gap between image and text */
   position: relative;
-  /* Make the project container relative */
 }
 
 .project:hover {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  /* Add a subtle box shadow on hover */
 }
 
 .project-image {
-  /* Updated mouse cursor on hover */
-  width: 150px;
-  /* Increased size */
-  height: 150px;
-  /* Increased size */
+  /* Style the image to take full width */
+  width: 100%;
+  height: auto;
   object-fit: cover;
-  /* prevent image distortion */
   border-radius: 5px;
+  margin-bottom: 10px;
+  /* Add some spacing */
   cursor: pointer;
-  /* The cursor is now a pointer/hand */
 }
 
 .project h3 {
@@ -152,11 +135,10 @@ nav a:hover {
   margin-bottom: 5px;
 }
 
-.project span {
-  color: #007bff;
-  /* Accent color */
-  display: inline-block;
-  margin-top: 10px;
+.project-content {
+  /* add display flex to better control the structure */
+  display: flex;
+  height: 100%;
 }
 
 .project-info {
@@ -164,26 +146,56 @@ nav a:hover {
   /* Take up remaining space */
 }
 
-#mouse-follow-image {
-  pointer-events: none;
-  /* allows the mouse to interact with elements behind it */
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 9999;
-  display: none;
-  /* Hidden by default */
+.button-container button {
+    /* Modern Button Styles */
+    background-color: #fff; /* White background */
+    color: #333; /* Dark text */
+    border: 2px solid #333; /* Subtle border */
+    padding: 12px 20px; /* Increased padding */
+    border-radius: 8px; /* More rounded corners */
+  cursor: pointer;
+    margin: 5px;
+    font-size: 0.9em; /* Slightly smaller font size */
+    font-weight: 500; /* Semi-bold font weight */
+    letter-spacing: 0.5px; /* Subtle letter spacing */
+    text-transform: uppercase; /* All caps */
+    transition: all 0.3s ease; /* Smooth transition for all properties */
 }
 
-#mouse-follow-image img {
-  display: block;
-  max-width: 600px;
-  /* Increased size */
-  max-height: 600px;
-  /* Increased size */
+/* Remove hover from CSS, the hover is now managed by the JS */
+/*Button container style*/
+.button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  /* Distribute buttons evenly */
+  align-items: center;
   width: auto;
-  height: auto;
-  border-radius: 5px;
+  /* changed width to auto */
+  min-height: 100%;
+  margin-left: 10px;
+}
+
+/* Keyframes for wiggle animation */
+@keyframes wiggle {
+  0% {
+    transform: rotate(-3deg);
+  }
+
+  100% {
+    transform: rotate(3deg);
+  }
+}
+
+/* Remove the project link */
+.project-link {
+  text-decoration: none;
+  /* Remove underline from the link */
+  color: inherit;
+  /* Inherit text color from parent */
+  display: unset;
+  /* Make the link a block element */
+  margin-bottom: 0px;
 }
 
 /* Contact Section */

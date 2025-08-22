@@ -1,23 +1,31 @@
 // script.js
 
-// Mouse Follow Image Effect
-const projectImages = document.querySelectorAll('.project-image');
-const mouseFollowImage = document.getElementById('mouse-follow-image');
-const mouseFollowImageImg = mouseFollowImage.querySelector('img');
+document.addEventListener('DOMContentLoaded', () => {
+  const projects = document.querySelectorAll('.project');
 
-projectImages.forEach(img => {
-    img.addEventListener('mouseover', (e) => {
-        mouseFollowImage.style.display = 'block';
-        mouseFollowImageImg.src = img.src; // set the image source to the hovered image
+  projects.forEach(project => {
+    const buttons = project.querySelectorAll('.button-container button');
+
+    project.addEventListener('mouseover', () => {
+      buttons.forEach(button => {
+        button.style.backgroundColor = '#333'; // Dark
+        button.style.color = '#fff';
+        button.style.border = '2px solid #fff';
+        button.style.transition = 'transform 0.5s ease-in-out'; // Add transition for rotation
+
+        // Apply wiggle animation
+        button.style.animation = 'wiggle 0.3s linear infinite alternate';
+      });
     });
 
-    img.addEventListener('mousemove', (e) => {
-      mouseFollowImage.style.left = `${e.clientX + 10}px`;
-      mouseFollowImage.style.top = `${e.clientY + 10}px`;
+    project.addEventListener('mouseout', () => {
+      buttons.forEach(button => {
+        button.style.backgroundColor = '#fff'; // White background
+        button.style.color = '#333'; // Dark text
+        button.style.border = '2px solid #333'; /* Subtle border */
+        button.style.transform = 'rotate(0deg)'; // Reset rotation
+        button.style.animation = 'none'; // Remove wiggle animation
+      });
     });
-
-    img.addEventListener('mouseout', () => {
-        mouseFollowImage.style.display = 'none';
-    });
+  });
 });
-
